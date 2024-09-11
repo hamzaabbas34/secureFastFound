@@ -1,0 +1,30 @@
+
+{/* <div className=" w-full h-full">
+						<img
+							src="./images/term_loan_1.jpg "
+							alt=""
+							className="h-full  object-cover"
+						/>
+					</div>
+					<div className="font-poppins ">
+						<h2 className="text-[28px] font-semibold  text-customBlue">
+							Power Up Your Business with flexible-term loans
+						</h2>
+						<h2 className="text-[28px] font-semibold py-3 xl:py-5 text-customGreen">
+							Access the Funding You Needâ€”Fast and On Your Terms!
+						</h2>
+						<p className=" text-[16px] md:text-[20px] leading-10 ">
+							In the ever-evolving business landscape, having access to capital
+							when you need it is crucial for growth. Whether youâ€™re planning
+							for business expansion, upgrading equipment and software, covering
+							payroll and working capital, or refinancing debt to improve cash
+							flow. With competitive rates, flexible terms, and fast fundingâ€”
+							our term loans are the classic, reliable solution for small
+							businesses ready to scale.
+						</p>
+						<div className=" py-3 xl:py-5">
+							<button className=" px-10 py-3 bg-bgBlue text-white rounded-md">
+								Apply Now
+							</button>
+						</div>
+					</div> */}
