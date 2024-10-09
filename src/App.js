@@ -13,6 +13,9 @@ import PurchaseOrderFinancing from "./components/Services/Purchase_Order_Financi
 import Sbaloans from "./components/Services/sba_loans/Sbaloans";
 import RevenueBased from "./components/Services/Revenue-Based/RevenueBased";
 import EquipmentFinancing from "./components/Services/Equipment_financing/EquipmentFinancing";
+import Privacy from "./components/Privacy/Privacy";
+import LoanServies from "./components/LoanServices/LoanServies";
+import Blogs from "./components/Blog/Blogs";
 function App() {
 	return (
 		<BrowserRouter>
@@ -42,7 +45,10 @@ function App() {
 				/>
 				<Route path="/Sbaloans" element={<Sbaloans />} />
 				<Route path="/RevenueBased" element={<RevenueBased />} />
-				<Route path="/EquipmentFinancing" element={<EquipmentFinancing  />} />
+				<Route path="/EquipmentFinancing" element={<EquipmentFinancing />} />
+				<Route path="/privacy-policy" element={<Privacy />} />
+				<Route path="/loan_Service" element={<LoanServies />} />
+				<Route path="/blog" element={<Blogs />} />
 			</Routes>
 		</BrowserRouter>
 	);

@@ -1,23 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../Navbar/Navbar";
 import Footer from "../../home/Footer/Footer";
+import { Link } from "react-router-dom";
+import img1 from "../../../assets/images/backServiceLoan.png";
+import img2 from "../../../assets/images/merchant_cash_1.png";
+
 export default function MerchantCashAdvance() {
+	useEffect(() => {
+		// Scroll to top when the component loads
+		window.scrollTo(0, 0);
+	}, []);
 	return (
 		<div>
 			<Navbar />
 			<div className="">
-				<div className="mt-[90px] w-full h-[40vh] bg-red-100 flex justify-center items-center text-[48px] text-white">
-					<h2 className="  px-8 font-Inter  text-3xl sm:text-5xl ">
+				<div
+					style={{
+						backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${img1})`,
+					}}
+					className=" bg-center bg-cover  mt-[90px] w-full h-[40vh] bg-red-100 flex justify-center items-center text-[48px] text-white">
+					<h2 className="  px-8 font-Inter  text-3xl sm:text-5xl font-serif ">
 						Merchant Cash Advance
 					</h2>
 				</div>
-				<div className=" grid  gap-5 lg:grid-cols-2 grid-cols-1 px-8  md:px-20 lg:px-28 xl:px-40 2xl:px-48  my-16 ">
+				<div className=" grid  gap-5 lg:grid-cols-2 grid-cols-1 px-3  container  my-16 ">
 					<div className=" w-full h-full">
-						<img
-							src="./images/sba_IMG_1.webp"
-							alt=""
-							className="h-full  object-cover"
-						/>
+						<img src={img2} alt="" className="h-auto  object-cover" />
 					</div>
 					<div className="font-poppins ">
 						<h2 className="text-[28px] font-semibold  text-customBlue">
@@ -38,20 +46,20 @@ export default function MerchantCashAdvance() {
 						<p className=" text-[16px] md:text-[20px] leading-10  mt-3">
 							Whatever your business requirements: purchasing new inventory or
 							equipment, covering payroll during peak seasons, funding marketing
-							campaigns, or handling emergency repairs or unexpected expensesâ€”
-							Secure Fast Fundingâ€™s MCA is all your calling!
+							campaigns, or handling emergency repairs or unexpected expensive
+							Secure Fast Fundings MCA is all your calling!
 						</p>
 
 						<div className=" py-3 xl:py-5">
-							<button className=" px-10 py-3 bg-bgBlue text-white rounded-md">
-								Apply Now
+							<button className=" px-10 py-3 bg-bgBlue border-[2px] border-customBlue hover:bg-inherit hover:text-white  text-white rounded-md ">
+								<Link to="/Check_Eligibility">Apply Now</Link>
 							</button>
 						</div>
 					</div>
 				</div>
 				<div className="bg-[#ecf8ef] px-3 sm:px-0">
 					<div
-						className=" font-poppins  xl:w-[1320px] lg:w-[1024px] md:w-[720px]  sm:w-[600px] w-full mx-auto   
+						className=" font-poppins  container mx-auto   
 		">
 						<h2 className="text-[28px] text-customBlue font-semibold pt-10 pb-5 ">
 							Merchant Cash Advance Benefits:
@@ -96,7 +104,7 @@ export default function MerchantCashAdvance() {
 						<h2 className="text-[28px] text-customBlue font-semibold pt-0 pb-3 ">
 							Why Choose a Merchant Cash Advance?
 						</h2>
-						<ul className="list-disc custom-list flex flex-col gap-3  px-3 sm:px-8  pb-10 ">
+						<ul className="list-disc custom-list flex flex-col gap-3  px-3 sm:px-8  pb-16 ">
 							<li>
 								<span className="text-[22px] font-semibold  text-customGreen">
 									Speedy Access to Funds:{" "}

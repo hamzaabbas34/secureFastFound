@@ -28,3 +28,1238 @@
 							</button>
 						</div>
 					</div> */}
+
+
+					// import React, { useState } from "react";
+// import { Icon } from "@iconify/react";
+// import { Link } from "react-router-dom"; // Import Link from react-router-dom
+
+// export default function Navbar() {
+// 	const [dropdownOpen, setDropdownOpen] = useState(false); // For dropdown menu
+// 	const [menuOpen, setMenuOpen] = useState(false); // For mobile menu
+
+// 	return (
+// 		<nav className="fixed top-0 left-0 w-full bg-[#F8F9FA] z-50 shadow-lg text-white px-8  md:px-20 lg:px-28 xl:px-40 2xl:px-48 py-4">
+// 			<div className="container mx-auto flex justify-between items-center">
+// 				{/* Left Side: Logo */}
+// 				<div className="text-2xl font-poppins font-bold">
+// 					<Link to="/" className="text-customGreen">
+// 						<img src="./images/logo.png" alt="" className=" max-w-64" />
+// 					</Link>
+// 				</div>
+
+// 				{/* Right Side: Links */}
+// 				<ul className="hidden lg:flex xl:gap-1 text-black">
+// 					<li className="hover:bg-bgGreen rounded-sm px-3 py-3 hover:text-white font-roboto text-[17px] font-bold">
+// 						<Link to="/" className="">
+// 							Home
+// 						</Link>
+// 					</li>
+
+// 					<li className="relative">
+// 						{/* Dropdown Link */}
+// 						<button
+// 							className="flex gap-2 justify-center items-center focus:outline-none hover:bg-bgGreen rounded-sm px-3 py-3 hover:text-white font-roboto text-[17px] font-bold"
+// 							onClick={() => setDropdownOpen(!dropdownOpen)}>
+// 							Loan Services
+// 							<span>
+// 								<Icon
+// 									icon="iconamoon:arrow-down-2-fill"
+// 									width="1.2rem"
+// 									height="1.2rem"
+// 									style={{ color: "black" }}
+// 								/>
+// 							</span>
+// 						</button>
+
+// 						{/* Dropdown Menu with transition */}
+// 						<ul
+// 							className={`absolute top-full mt-2 bg-white text-black rounded shadow-lg w-72 overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+// 								dropdownOpen ? "max-h-[500px]" : "max-h-0"
+// 							}`}>
+// 							<li className="hover:bg-gray-200 hover:text-white">
+// 								<Link to="/teamloan" className="block px-4 py-2">
+// 									Team Loan
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link to="/EquipmentFinancing" className="block px-4 py-2">
+// 									Equipment Financing
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link to="/Sbaloans" className="block px-4 py-2">
+// 									SBA Loans
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link to="/invoice_factoring_loan" className="block px-4 py-2">
+// 									Invoice Factoring
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link to="/RevenueBased" className="block px-4 py-2">
+// 									Revenue Based Financing
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link
+// 									to="/Purchase_Order_Financing"
+// 									className="block px-4 py-2">
+// 									Purchase Order Financing
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link to="/merchant_cash_advance" className="block px-4 py-2">
+// 									Merchant Cash Advance
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link to="/businessloan" className="block px-4 py-2">
+// 									Business Loans
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link to="/Line_of_credit" className="block px-4 py-2">
+// 									Line of credit
+// 								</Link>
+// 							</li>
+// 						</ul>
+// 					</li>
+
+// 					<li className="hover:bg-bgGreen rounded-sm px-3 py-3 hover:text-white font-roboto text-[17px] font-bold">
+// 						<Link to="/Check_Eligibility" className="">
+// 							Check Eligibility
+// 						</Link>
+// 					</li>
+// 					<li className="hover:bg-bgGreen rounded-sm px-3 py-3 hover:text-white font-roboto text-[17px] font-bold">
+// 						<Link to="/FAQ" className="">
+// 							FAQ
+// 						</Link>
+// 					</li>
+// 					<li className="hover:bg-bgGreen rounded-sm px-3 py-3 hover:text-white font-roboto text-[17px] font-bold">
+// 						<Link to="/contact" className="">
+// 							Contact us
+// 						</Link>
+// 					</li>
+// 				</ul>
+
+// 				{/* Mobile Menu Button */}
+// 				<div className="lg:hidden">
+// 					<button
+// 						className="text-black focus:outline-none"
+// 						onClick={() => setMenuOpen(!menuOpen)}>
+// 						<svg
+// 							className="w-6 h-6"
+// 							fill="none"
+// 							stroke="currentColor"
+// 							viewBox="0 0 24 24"
+// 							xmlns="http://www.w3.org/2000/svg">
+// 							<path
+// 								strokeLinecap="round"
+// 								strokeLinejoin="round"
+// 								strokeWidth="2"
+// 								d="M4 6h16M4 12h16M4 18h16"></path>
+// 						</svg>
+// 					</button>
+// 				</div>
+// 			</div>
+
+// 			{/* Mobile Menu */}
+// 			{menuOpen && (
+// 				<ul className="  lg:hidden mt-4 space-y-2  text-center rounded-lg text-black">
+// 					<li className="py-5">
+// 						<Link to="/" className="">
+// 							Home
+// 						</Link>
+// 					</li>
+// 					<li className="py-5 mt-0" style={{ margin: "0px" }}>
+// 						<Link to="/about" className="block m-0">
+// 							About
+// 						</Link>
+// 					</li>
+// 					<li
+// 						className="flex flex-col justify-center  pt-4 pb-5"
+// 						style={{ margin: "0px" }}>
+// 						<button
+// 							className="block focus:outline-none"
+// 							onClick={() => setDropdownOpen(!dropdownOpen)}>
+// 							Services
+// 						</button>
+// 						{/* Mobile Dropdown */}
+// 						<ul
+// 							className={`bg-white  rounded-lg overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+// 								dropdownOpen ? "max-h-[500px]" : "max-h-0"
+// 							}`}>
+// 							<li className="  ">
+// 								<Link to="/teamloan" className="block py-3">
+// 									Team Loan
+// 								</Link>
+// 							</li>
+// 							<li className=" ">
+// 								<Link to="/EquipmentFinancing" className="block py-3">
+// 									Equipment Financing
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link to="/Sbaloans" className="block  py-3">
+// 									SBA Loans
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link to="/invoice_factoring_loan" className="block  py-3">
+// 									Invoice Factoring
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link to="/RevenueBased" className="block  py-3">
+// 									Revenue Based Financing
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link to="/Purchase_Order_Financing" className="block  py-3">
+// 									Purchase Order Financing
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link to="/merchant_cash_advance" className="block  py-3">
+// 									Merchant Cash Advance
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link to="/businessloan" className="block  py-3">
+// 									Business Loans
+// 								</Link>
+// 							</li>
+// 							<li className="hover:bg-gray-200">
+// 								<Link to="/Line_of_credit" className="block  py-3">
+// 									Line of credit
+// 								</Link>
+// 							</li>
+// 						</ul>
+// 					</li>
+// 					<li className="pt-4 pb-">
+// 						<Link to="/contact" className="block hover:text-customGreen">
+// 							Contact
+// 						</Link>
+// 					</li>
+// 				</ul>
+// 			)}
+// 		</nav>
+// 	);
+// }
+
+
+
+const faqData = [
+		{
+			question: "What types of financing does Secure Fast Funding offer?",
+			answer:
+				"We provide a variety of loan services including Term Loans, Equipment Financing, SBA Loans, Invoice Factoring, Revenue-Driven Financing, Purchase Order Financing, Merchant Cash Advances, Business Loans, and Lines of Credit.",
+		},
+		{
+			question: "How does Secure Fast Funding evaluate creditworthiness?",
+			answer:
+				"We consider factors like your business revenue, time in business, credit score, and industry when evaluating creditworthiness.",
+		},
+		{
+			question:
+				"What types of equipment can I finance with Secure Fast Funding?",
+			answer:
+				"You can finance a wide range of equipment, including heavy machinery, agricultural equipment, medical devices, restaurant appliances, and office technology.",
+		},
+		{
+			question: "What is a business line of credit?",
+			answer:
+				"A business line of credit provides continuous working capital, allowing you to access funds as needed to manage cash flow, cover unexpected expenses, or seize new business opportunities.",
+		},
+		{
+			question: "What is an SBA Loan?",
+			answer:
+				"An SBA Loan is a government-backed financing option designed to support small businesses in the United States. These loans offer lower interest rates, extended repayment terms, and lower down payment requirements compared to conventional loans.",
+		},
+		{
+			question: "What is a business term loan?",
+			answer:
+				"A business term loan is a lump-sum financing option that provides your business with the capital it needs for various purposes, such as expansion, equipment upgrades, or debt refinancing. The loan is repaid through fixed monthly installments over a predetermined period.",
+		},
+		{
+			question: "What is invoice factoring?",
+			answer:
+				"Invoice factoring is a financial solution that allows businesses to convert their outstanding invoices into immediate cash by selling them to a factoring company at a discounted rate. The factoring company then collects the payments directly from your customers.",
+		},
+		{
+			question: "What is Revenue-Based Financing (RBF)?",
+			answer:
+				"Revenue-Based Financing (RBF) is a flexible financing option that provides your business with a lump sum of capital in exchange for a percentage of your future revenue. This model is ideal for businesses with recurring income, such as SaaS or subscription-based companies.",
+		},
+		{
+			question: "What is Purchase Order Financing?",
+			answer:
+				"Purchase Order Financing (PO Financing) is a funding solution that provides businesses with the necessary capital to fulfill large orders without affecting their cash flow. This financing covers up to 100% of the cost required to produce and deliver products, allowing you to focus on fulfilling orders without worrying about upfront expenses.",
+		},
+		{
+			question: "What is a Business Loan?",
+			answer:
+				"A business loan is a financing solution designed to help businesses manage their short- and long-term financial needs. It provides the necessary capital for various purposes, such as covering operational costs, expanding operations, or investing in new opportunities",
+		},
+	];
+
+
+
+	// import React from "react";
+// import { Icon } from "@iconify/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
+// import "swiper/css/effect-coverflow";
+// import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
+// import "./swp.css";
+// export default function Slider() {
+// 	return (
+// 		<div className="   relative w-full h-auto flex-col flex items-center justify-center px-3 md:px-20 lg:px-32 xl:px-40 2xl:px-48">
+// 			<Swiper
+// 				effect={"coverflow"}
+// 				grabCursor={true}
+// 				centeredSlides={true}
+// 				loop={true}
+// 				spaceBetween={200}
+// 				coverflowEffect={{
+// 					rotate: 0,
+// 					stretch: 0,
+// 					depth: 800,
+// 					modifier: 1,
+// 					slideShadows: false,
+// 				}}
+// 				pagination={{
+// 					clickable: true,
+// 				}}
+// 				navigation={true}
+// 				modules={[Navigation, Pagination, EffectCoverflow]}
+// 				breakpoints={{
+// 					// when window width is >= 320px (mobile)
+// 					320: {
+// 						slidesPerView: 1,
+// 						spaceBetween: 10,
+// 					},
+// 					// when window width is >= 640px (tablet)
+// 					640: {
+// 						slidesPerView: 2,
+// 						spaceBetween: 20,
+// 					},
+// 					// when window width is >= 768px (larger tablet/small laptop)
+// 					768: {
+// 						slidesPerView: 2,
+// 						spaceBetween: 30,
+// 					},
+// 					// when window width is >= 1024px (desktop)
+// 					1024: {
+// 						slidesPerView: 2,
+// 						spaceBetween: 120,
+// 					},
+// 					1440: {
+// 						slidesPerView: 2,
+// 						spaceBetween: 180,
+// 					},
+// 				}}
+// 				className="swiper-container w-full  h-auto">
+// 				<SwiperSlide>
+// 					<div className="overflow-hidden   swiper-slide flex items-center justify-center bg-white shadow-lg  text-lg font-bold ">
+// 						<div className=" bg-bgGreen flex flex-col gap-5 font-normal   px-8 py-4 ">
+// 							<div className=" flex items-center gap-5">
+// 								<Icon
+// 									icon="fa:quote-left"
+// 									width="2rem"
+// 									height="2rem"
+// 									style={{ color: "white" }}
+// 								/>
+// 								<div className="flex justify-center items-center gap-2 ">
+// 									<img src="./images/star.png" alt="" width="20px" />
+// 									<img src="./images/star.png" alt="" width="20px" />
+// 									<img src="./images/star.png" alt="" width="20px" />
+// 									<img src="./images/star.png" alt="" width="20px" />
+// 								</div>
+// 							</div>
+// 							<p className="font-poppins text-white pb-6 ">
+// 								Lorem ipsum dolor sit amet consectetur. Elit sociis consequat
+// 								venenatis justo sed aenean amet lacus.Lorem ipsum dolor sit amet
+// 								consectetur. Elit sociis consequat venenatis justo.
+// 							</p>
+// 						</div>
+// 						<div className="  flex justify-center items-center flex-col gap-10  h-auto  py-4">
+// 							<div className="  left-[40%] top-[-20px]  w-28 h-28  rounded-full overflow-hidden  mt-[-30px] ">
+// 								<img
+// 									src="https://cms.imgworlds.com/assets/9558de9d-1e49-437e-aa7b-b8bd4d999b00.jpg?key=home-gallery"
+// 									alt=""
+// 									className="w-100 h-[100%] object-cover object-top  "
+// 								/>
+// 							</div>
+// 							<h2 className="font-poppins  ">VENZONE</h2>
+// 						</div>
+// 					</div>
+// 				</SwiperSlide>
+// 				<SwiperSlide>
+// <div className=" overflow-hidden swiper-slide flex items-center justify-center bg-white shadow-lg  text-lg font-bold ">
+// 	<div className=" bg-bgGreen flex flex-col gap-5 font-normal   px-8 py-4 ">
+// 		<div className=" flex items-center gap-5">
+// 			<Icon
+// 				icon="fa:quote-left"
+// 				width="2rem"
+// 				height="2rem"
+// 				style={{ color: "white" }}
+// 			/>
+// 			<div className="flex justify-center items-center gap-2 ">
+// 				<img src="./images/star.png" alt="" width="20px" />
+// 				<img src="./images/star.png" alt="" width="20px" />
+// 				<img src="./images/star.png" alt="" width="20px" />
+// 				<img src="./images/star.png" alt="" width="20px" />
+// 			</div>
+// 		</div>
+// 		<p className="font-poppins text-white pb-6 ">
+// 			Lorem ipsum dolor sit amet consectetur. Elit sociis consequat
+// 			venenatis justo sed aenean amet lacus.Lorem ipsum dolor sit amet
+// 			consectetur. Elit sociis consequat venenatis justo.
+// 		</p>
+// 	</div>
+// 	<div className="  flex justify-center items-center flex-col gap-10  h-auto  py-4">
+// 		<div className="  left-[40%] top-[-20px]  w-28 h-28  rounded-full overflow-hidden  mt-[-30px] ">
+// 			<img
+// 				src="https://cms.imgworlds.com/assets/9558de9d-1e49-437e-aa7b-b8bd4d999b00.jpg?key=home-gallery"
+// 				alt=""
+// 				className="w-100 h-[100%] object-cover object-top  "
+// 			/>
+// 		</div>
+// 		<h2 className="font-poppins  ">VENZONE</h2>
+// 	</div>
+// </div>
+// 				</SwiperSlide>
+// 				<SwiperSlide>
+// 					<div className="overflow-hidden swiper-slide flex items-center justify-center bg-white shadow-lg  text-lg font-bold ">
+// 						<div className=" bg-bgGreen flex flex-col gap-5 font-normal   px-8 py-4 ">
+// 							<div className=" flex items-center gap-5">
+// 								<Icon
+// 									icon="fa:quote-left"
+// 									width="2rem"
+// 									height="2rem"
+// 									style={{ color: "white" }}
+// 								/>
+// 								<div className="flex justify-center items-center gap-2 ">
+// 									<img src="./images/star.png" alt="" width="20px" />
+// 									<img src="./images/star.png" alt="" width="20px" />
+// 									<img src="./images/star.png" alt="" width="20px" />
+// 									<img src="./images/star.png" alt="" width="20px" />
+// 								</div>
+// 							</div>
+// 							<p className="font-poppins text-white pb-6 ">
+// 								Lorem ipsum dolor sit amet consectetur. Elit sociis consequat
+// 								venenatis justo sed aenean amet lacus.Lorem ipsum dolor sit amet
+// 								consectetur. Elit sociis consequat venenatis justo.
+// 							</p>
+// 						</div>
+// 						<div className="  flex justify-center items-center flex-col gap-10  h-auto  py-4">
+// 							<div className="  left-[40%] top-[-20px]  w-28 h-28  rounded-full overflow-hidden  mt-[-30px] ">
+// 								<img
+// 									src="https://cms.imgworlds.com/assets/9558de9d-1e49-437e-aa7b-b8bd4d999b00.jpg?key=home-gallery"
+// 									alt=""
+// 									className="w-100 h-[100%] object-cover object-top  "
+// 								/>
+// 							</div>
+// 							<h2 className="font-poppins  ">VENZONE</h2>
+// 						</div>
+// 					</div>
+// 				</SwiperSlide>
+// 				<SwiperSlide>
+// 					<div className=" overflow-hidden swiper-slide flex items-center justify-center bg-white shadow-lg  text-lg font-bold ">
+// 						<div className=" bg-bgGreen flex flex-col gap-5 font-normal   px-8 py-4 ">
+// 							<div className=" flex items-center gap-5">
+// 								<Icon
+// 									icon="fa:quote-left"
+// 									width="2rem"
+// 									height="2rem"
+// 									style={{ color: "white" }}
+// 								/>
+// 								<div className="flex justify-center items-center gap-2 ">
+// 									<img src="./images/star.png" alt="" width="20px" />
+// 									<img src="./images/star.png" alt="" width="20px" />
+// 									<img src="./images/star.png" alt="" width="20px" />
+// 									<img src="./images/star.png" alt="" width="20px" />
+// 								</div>
+// 							</div>
+// 							<p className="font-poppins text-white pb-6 ">
+// 								Lorem ipsum dolor sit amet consectetur. Elit sociis consequat
+// 								venenatis justo sed aenean amet lacus.Lorem ipsum dolor sit amet
+// 								consectetur. Elit sociis consequat venenatis justo.
+// 							</p>
+// 						</div>
+// 						<div className="  flex justify-center items-center flex-col gap-10  h-auto  py-4">
+// 							<div className="  left-[40%] top-[-20px]  w-28 h-28  rounded-full overflow-hidden  mt-[-30px] ">
+// 								<img
+// 									src="https://cms.imgworlds.com/assets/9558de9d-1e49-437e-aa7b-b8bd4d999b00.jpg?key=home-gallery"
+// 									alt=""
+// 									className="w-100 h-[100%] object-cover object-top  "
+// 								/>
+// 							</div>
+// 							<h2 className="font-poppins  ">VENZONE</h2>
+// 						</div>
+// 					</div>
+// 				</SwiperSlide>
+// 			</Swiper>
+// 		</div>
+// 	);
+// }
+
+
+
+ // import React, { useState } from "react";
+// import { Icon } from "@iconify/react";
+// import { NavLink } from "react-router-dom";
+// import MobileNav from "./MobileNav";
+
+// export default function Navbar() {
+// 	const [dropdownOpen, setDropdownOpen] = useState(false); // For dropdown menu
+// 	const [menuOpen, setMenuOpen] = useState(false); // For mobile menu
+// 	const [hoverOpen, setHoverOpen] = useState(false);
+
+// 	return (
+// 		<nav className="fixed top-0 left-0 mx-auto bg-[#F8F9FA]  z-50  text-white sm:px-[540px]  md:px-[720px]   lg:px-[960px]  xl:px-[1140px]   2xl:w-[1320px] py-4">
+// 			<div className="container mx-auto flex    selection:">
+// 				{/* Left Side: Logo */}
+// 				<div className="text-2xl font-poppins font-bold">
+// 					<NavLink to="/" className="text-customGreen">
+// 						<img src="./images/logo.png" alt="Logo" className="max-w-[190px]" />
+// 					</NavLink>
+// 				</div>
+
+// 				{/* Right Side: Links for large screens */}
+// 				<ul className="hidden lg:flex xl:gap-1 text-black my-auto justify-around  ">
+// 					<li>
+// 						<NavLink
+// 							to="/"
+// 							className={({ isActive }) =>
+// 								isActive
+// 									? "bg-bgGreen text-white  px-3 py-3 font-roboto text-[19px] font-bold"
+// 									: "hover:bg-bgGreen hover:text-white hover:rounded-sm px-3 py-3 font-roboto text-[19px] font-bold"
+// 							}>
+// 							Home
+// 						</NavLink>
+// 					</li>
+
+// 					<li
+// 						className="relative"
+// 						onMouseEnter={() => setHoverOpen(true)}
+// 						onMouseLeave={() => setHoverOpen(false)}>
+// 						{/* Dropdown Link */}
+// 						<button className="flex gap-2 justify-center items-center focus:outline-none hover:bg-bgGreen hover:rounded-sm px-3  mt-[-10px] py-[10px] group hover:text-white font-roboto text-[17px] font-bold">
+// 							Loan Services
+// 							<span>
+// 								<Icon
+// 									icon="iconamoon:arrow-down-2-fill"
+// 									width="1.2rem"
+// 									height="1.2rem"
+// 									className="text-black group-hover:text-white"
+// 								/>
+// 							</span>
+// 						</button>
+
+// 						{/* Dropdown Menu */}
+// 						<ul
+// 							className={`absolute top-full mt-2 bg-white text-black rounded shadow-lg w-80 overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+// 								hoverOpen ? "max-h-[500px]" : "max-h-0"
+// 							}`}>
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink to="/teamloan" className="block px-4 py-2">
+// 									Team Loan
+// 								</NavLink>
+// 							</li>
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink to="/EquipmentFinancing" className="block px-4 py-2">
+// 									Equipment Financing
+// 								</NavLink>
+// 							</li>
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink to="/Sbaloans" className="block px-4 py-2">
+// 									SBA Loans
+// 								</NavLink>
+// 							</li>
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink
+// 									to="/invoice_factoring_loan"
+// 									className="block px-4 py-2">
+// 									Invoice Factoring
+// 								</NavLink>
+// 							</li>
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink to="/RevenueBased" className="block px-4 py-2">
+// 									Revenue Based Financing
+// 								</NavLink>
+// 							</li>
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink
+// 									to="/Purchase_Order_Financing"
+// 									className="block px-4 py-2">
+// 									Purchase Based Financing
+// 								</NavLink>
+// 							</li>
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink
+// 									to="/merchant_cash_advance"
+// 									className="block px-4 py-2">
+// 									Merchant Cash Advance Financing
+// 								</NavLink>
+// 							</li>
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink to="/businessloan" className="block px-4 py-2">
+// 									Business Loans
+// 								</NavLink>
+// 							</li>
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink to="/Line_of_credit" className="block px-4 py-2">
+// 									Line of Credit
+// 								</NavLink>
+// 							</li>
+// 						</ul>
+// 					</li>
+
+// 					<li>
+// 						<NavLink
+// 							to="/Check_Eligibility"
+// 							className={({ isActive }) =>
+// 								isActive
+// 									? "bg-bgGreen text-white px-3 py-3 font-roboto text-[17px] font-bold"
+// 									: "hover:bg-bgGreen hover:text-white hover:rounded-sm px-3 py-3 font-roboto text-[17px] font-bold"
+// 							}>
+// 							Check Eligibility
+// 						</NavLink>
+// 					</li>
+// 					<li>
+// 						<NavLink
+// 							to="/FAQ"
+// 							className={({ isActive }) =>
+// 								isActive
+// 									? "bg-bgGreen text-white px-3 py-3 font-roboto text-[17px] font-bold"
+// 									: "hover:bg-bgGreen hover:text-white hover:rounded-sm px-3 py-3 font-roboto text-[17px] font-bold"
+// 							}>
+// 							FAQ
+// 						</NavLink>
+// 					</li>
+// 					<li>
+// 						<NavLink
+// 							to="/contact"
+// 							className={({ isActive }) =>
+// 								isActive
+// 									? "bg-bgGreen text-white  px-3 py-3 font-roboto text-[17px] font-bold"
+// 									: "hover:bg-bgGreen hover:text-white hover:rounded-sm px-3 py-3 font-roboto text-[17px] font-bold"
+// 							}>
+// 							Contact us
+// 						</NavLink>
+// 					</li>
+// 				</ul>
+
+// 				{/* Mobile Menu Button */}
+// 				<div className="lg:hidden">
+// 					<button
+// 						className="text-black focus:outline-none"
+// 						onClick={() => setMenuOpen(!menuOpen)}>
+// 						<svg
+// 							className="w-6 h-6"
+// 							fill="none"
+// 							stroke="currentColor"
+// 							viewBox="0 0 24 24"
+// 							xmlns="http://www.w3.org/2000/svg">
+// 							<path
+// 								strokeLinecap="round"
+// 								strokeLinejoin="round"
+// 								strokeWidth="2"
+// 								d="M4 6h16M4 12h16M4 18h16"></path>
+// 						</svg>
+// 					</button>
+// 				</div>
+// 			</div>
+
+// 			{/* Mobile Menu */}
+// 			<MobileNav
+// 				menuOpen={menuOpen}
+// 				setDropdownOpen={setDropdownOpen}
+// 				dropdownOpen={dropdownOpen}
+// 			/>
+// 		</nav>
+// 	);
+// }
+
+
+
+mport React, { useState } from "react";
+import { Icon } from "@iconify/react";
+import { NavLink } from "react-router-dom";
+import MobileNav from "./MobileNav";
+
+export default function Navbar() {
+	const [dropdownOpen, setDropdownOpen] = useState(false); // For dropdown menu
+	const [menuOpen, setMenuOpen] = useState(false); // For mobile menu
+	const [hoverOpen, setHoverOpen] = useState(false);
+
+	return (
+		<nav className="fixed top-0 left-0 w-full bg-[#F8F9FA] z-50 text-white py-[25px]">
+			<div className=" mx-auto flex justify-between items-center container px-3 ">
+				{/* Left Side: Logo */}
+				<div className="text-2xl font-poppins font-bold">
+					<NavLink to="/" className="text-customGreen">
+						<img src="./images/logo.png" alt="Logo" className="max-w-[190px]" />
+					</NavLink>
+				</div>
+
+				{/* Right Side: Links for large screens */}
+				<ul className="hidden lg:flex  gap-3 xl:gap-3 text-black my-auto justify-between  items-center">
+					<li>
+						<NavLink
+							to="/"
+							className={({ isActive }) =>
+								isActive
+									? "bg-bgGreen text-white px-3 py-3 font-roboto  rounded-sm font-bold text-[19px]"
+									: "hover:bg-bgGreen hover:rounded-sm rounded-none hover:text-white px-3 py-3 font-roboto text-[19px] font-bold"
+							}>
+							Home
+						</NavLink>
+					</li>
+
+					<li
+						className="relative"
+						onMouseEnter={() => setHoverOpen(true)}
+						onMouseLeave={() => setHoverOpen(false)}>
+						{/* Dropdown Link */}
+						<NavLink
+							to="/loan_Service"
+							className={({ isActive }) =>
+								isActive
+									? "bg-bgGreen text-white px-0 py-0 font-roboto  rounded-sm font-bold text-[19px] flex"
+									: "hover:bg-bgGreen hover:rounded-sm rounded-none hover:text-white px-0 py-0 font-roboto text-[19px] flex font-bold"
+							}>
+							<button className="flex gap-2 justify-center items-center focus:outline-none hover:bg-bgGreen px-3 py-2 group hover:text-white font-roboto text-[19px] font-bold">
+								Loan Services
+								<span>
+									<Icon
+										icon="iconamoon:arrow-down-2-fill"
+										width="1.2rem"
+										height="1.2rem"
+										className={
+											({ isActive }) =>
+												isActive
+													? "text-white" // If active, set icon color to white
+													: "text-black group-hover:text-white" // Default color is black, changes on hover
+										}
+									/>
+								</span>
+							</button>
+						</NavLink>
+
+						{/* Dropdown Menu */}
+						<ul
+							className={`absolute top-full mt-2 bg-white text-[19px] text-black rounded shadow-lg w-80 overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+								hoverOpen ? "max-h-[500px]" : "max-h-0"
+							}`}>
+							{/* Dropdown items */}
+							<li className="hover:bg-bgGreen  hover:text-white font-semibold">
+								<NavLink to="/teamloan" className="block px-4 py-2">
+									Team Loan
+								</NavLink>
+							</li>
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink to="/EquipmentFinancing" className="block px-4 py-2">
+									Equipment Financing
+								</NavLink>
+							</li>
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink to="/Sbaloans" className="block px-4 py-2">
+									SBL Loans
+								</NavLink>
+							</li>
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink
+									to="/invoice_factoring_loan"
+									className="block px-4 py-2">
+									Invoice Factoring
+								</NavLink>
+							</li>
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink to="/RevenueBased" className="block px-4 py-2">
+									Revenue-Driven Financing
+								</NavLink>
+							</li>
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink
+									to="/Purchase_Order_Financing"
+									className="block px-4 py-2">
+									Purchase Order Finacing
+								</NavLink>
+							</li>
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink
+									to="/merchant_cash_advance"
+									className="block px-4 py-2">
+									Merchant Cash Advance
+								</NavLink>
+							</li>
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink to="/businessloan" className="block px-4 py-2">
+									Business Loans
+								</NavLink>
+							</li>
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink to="/Line_of_credit" className="block px-4 py-2">
+									Line of Credit
+								</NavLink>
+							</li>
+							{/* Other dropdown items */}
+						</ul>
+					</li>
+
+					<li>
+						<NavLink
+							to="/Check_Eligibility"
+							className={({ isActive }) =>
+								isActive
+									? "bg-bgGreen text-white px-3 py-3  rounded-sm font-roboto text-[19px] font-bold"
+									: "hover:bg-bgGreen hover:rounded-sm rounded-none   hover:text-white px-3 py-3 font-roboto text-[19px] font-bold"
+							}>
+							Check Eligibility
+						</NavLink>
+					</li>
+
+					<li>
+						<NavLink
+							to="/FAQ"
+							className={({ isActive }) =>
+								isActive
+									? "bg-bgGreen text-white px-3 py-3 rounded-sm font-roboto text-[19px] font-bold"
+									: "hover:bg-bgGreen hover:rounded-sm rounded-none hover:text-white px-3 py-3 font-roboto text-[19px] font-bold"
+							}>
+							FAQ
+						</NavLink>
+					</li>
+
+					<li>
+						<NavLink
+							to="/contact"
+							className={({ isActive }) =>
+								isActive
+									? "bg-bgGreen text-white px-3 py-3 rounded-sm font-roboto text-[19px] font-bold"
+									: "hover:bg-bgGreen hover:rounded-sm rounded-none hover:text-white px-3 py-3 font-roboto text-[19px] font-bold"
+							}>
+							Contact us
+						</NavLink>
+					</li>
+				</ul>
+
+				{/* Mobile Menu Button */}
+				<div className="lg:hidden">
+					<button
+						className="text-black focus:outline-none"
+						onClick={() => setMenuOpen(!menuOpen)}>
+						<svg
+							className="w-6 h-6"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth="2"
+								d="M4 6h16M4 12h16M4 18h16"></path>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			{/* Mobile Menu */}
+			<MobileNav
+				menuOpen={menuOpen}
+				setDropdownOpen={setDropdownOpen}
+				dropdownOpen={dropdownOpen}
+			/>
+		</nav>
+	);
+}
+
+
+// import React, { useEffect, useMemo, useState } from "react";
+// import Navbar from "../Navbar/Navbar";
+// import { Icon } from "@iconify/react";
+// import Footer from "../home/Footer/Footer";
+// import TermsCond from "./TermsCond";
+// import toast from "react-hot-toast";
+// import vide from "../../assets/images/videos.mp4";
+
+// import Group1 from "../../assets/images/Group 1 (2).png";
+// import Group2 from "../../assets/images/Section 1.png";
+// import Group3 from "../../assets/images/circle+dots.png";
+
+// export default function CheckEligibility() {
+// 	const [showterms, setShowterms] = useState(false);
+
+// 	const overflowStyle = useMemo(
+// 		() => (showterms ? "hidden" : "auto"),
+// 		[showterms]
+// 	);
+
+// 	useEffect(() => {
+// 		// Scroll to top when the component loads
+// 		window.scrollTo(0, 0);
+// 	}, []);
+// 	useEffect(() => {
+// 		document.body.style.overflow = overflowStyle;
+// 		console.log("mamoizations");
+// 		// Cleanup on component unmount
+// 		return () => {
+// 			document.body.style.overflow = "auto";
+// 		};
+// 	}, [overflowStyle]);
+// 	function handlebtn() {
+// 		setShowterms(!showterms); // This sets showterms to true
+// 		console.log("Button clicked...");
+// 	}
+
+// 	const [formValues, setFormValues] = useState({
+// 		firstName: "",
+// 		lastName: "",
+// 		businessName: "",
+// 		email: "",
+// 		contactNumber: "",
+// 		loanAmount: "",
+// 		ownershipPercentage: "",
+// 		businessDuration: "",
+// 		loanUsage: "",
+// 		agreedToTerms: false,
+// 	});
+
+// 	// State to manage validation errors
+// 	const [errors, setErrors] = useState({
+// 		firstName: "",
+// 		lastName: "",
+// 		businessName: "",
+// 		email: "",
+// 		contactNumber: "",
+// 		loanAmount: "",
+// 		ownershipPercentage: "",
+// 		businessDuration: "",
+// 		loanUsage: "",
+// 		agreedToTerms: "",
+// 	});
+
+// 	// Handle input changes
+// 	const handleChange = (e) => {
+// 		const { name, value, type, checked } = e.target;
+// 		setFormValues({
+// 			...formValues,
+// 			[name]: type === "checkbox" ? checked : value,
+// 		});
+// 	};
+
+// 	// Validate form fields
+// 	const validate = () => {
+// 		const newErrors = {};
+
+// 		if (!formValues.firstName) newErrors.firstName = "This field is required.";
+// 		if (!formValues.lastName) newErrors.lastName = "This field is required.";
+// 		if (!formValues.businessName)
+// 			newErrors.businessName = "This field is required.";
+// 		if (!formValues.email) newErrors.email = "This field is required.";
+// 		else if (!formValues.email.includes("@gmail.com")) {
+// 			newErrors.email = "Please use a Gmail address.";
+// 		}
+// 		if (!formValues.contactNumber)
+// 			newErrors.contactNumber = "This field is required.";
+// 		if (!formValues.loanAmount)
+// 			newErrors.loanAmount = "This field is required.";
+// 		if (!formValues.ownershipPercentage)
+// 			newErrors.ownershipPercentage = "This field is required.";
+// 		if (!formValues.businessDuration)
+// 			newErrors.businessDuration = "This field is required.";
+// 		if (!formValues.loanUsage) newErrors.loanUsage = "This field is required.";
+// 		if (!formValues.agreedToTerms)
+// 			newErrors.agreedToTerms =
+// 				"Please read and accept the terms & conditions.";
+
+// 		setErrors(newErrors);
+// 		return Object.keys(newErrors).length === 0;
+// 	};
+
+// 	// Handle form submission
+// 	const handleSubmit = async (e) => {
+// 		e.preventDefault();
+// 		if (validate()) {
+// 			try {
+// 				const response = await fetch(
+// 					`http://localhost:4000/api/check-Eligibility`,
+// 					{
+// 						method: "POST",
+// 						headers: {
+// 							"Content-Type": "application/json",
+// 						},
+// 						body: JSON.stringify(formValues),
+// 					}
+// 				);
+
+// 				if (!response.ok) {
+// 					throw new Error("Network response was not ok");
+// 				}
+
+// 				const result = await response.json();
+// 				toast.success("result");
+// 				if (response.ok) {
+// 					alert("result");
+// 				}
+// 				console.log("Final Result", result);
+// 			} catch (error) {
+// 				toast.success("Something is Missing");
+// 				console.error("Error submitting form:", error);
+// 			}
+// 		}
+// 	};
+
+loading {
+		<div className="flex justify-center items-center h-screen top-0 left-0 fixed w-full bg-black bg-opacity-50" >
+					<div
+						className="border-s border-t border-b  animate-spin inline-block w-8 h-8 border-4 rounded-full"
+						role="status">
+						<span className="visually-hidden"></span>
+					</div>
+				</div>
+}
+
+
+// import React, { useEffect, useState } from "react";
+// import Navbar from "../Navbar/Navbar";
+// import { Icon } from "@iconify/react";
+
+// import Footer from "../home/Footer/Footer";
+
+// export default function ContactUs() {
+// 	const [formData, setFormData] = useState({
+// 		fullName1: "",
+// 		emial: "",
+// 		contactNumber: "",
+// 		object: "",
+// 		message: "",
+// 	});
+
+// 	const [errors, setErrors] = useState({});
+// 	useEffect(() => {
+// 		// Scroll to top when the component loads
+// 		window.scrollTo(0, 0);
+// 	}, []);
+// 	const handleChange = (e) => {
+// 		setFormData({
+// 			...formData,
+// 			[e.target.name]: e.target.value,
+// 		});
+// 	};
+
+// 	const handleSubmit = (e) => {
+// 		e.preventDefault();
+
+// 		// Validation logic
+// 		let newErrors = {};
+// 		if (!formData.fullName1.trim())
+// 			newErrors.fullName1 = "This field is required";
+// 		if (!formData.fullName2.trim())
+// 			newErrors.fullName2 = "This field is required";
+// 		if (!formData.contactNumber.trim())
+// 			newErrors.contactNumber = "This field is required";
+// 		if (!formData.object.trim()) newErrors.object = "This field is required";
+// 		if (!formData.message.trim()) newErrors.message = "This field is required";
+
+// 		if (Object.keys(newErrors).length === 0) {
+// 			// Submit the form
+// 			console.log("Form submitted:", formData);
+// 			setFormData({
+// 				fullName1: "",
+// 				fullName2: "",
+// 				contactNumber: "",
+// 				object: "",
+// 				message: "",
+// 			});
+// 		} else {
+// 			setErrors(newErrors);
+// 		}
+// 	};
+// 	return (
+// 		<div className="overflow-hidden">
+// 			<Navbar />
+// 			<div className="mt-[90px] text-center px-4 py-10">
+// 				<h2 className="text-4xl font-poppins  font-[600]  d text-customBlue ">
+// 					Contact Us
+// 				</h2>
+// 				<p className=" font-poppins text-[20px] mt-4">
+// 					Any question or remarks? Just write us a message!
+// 				</p>
+// 			</div>
+// 			<div className=" px-3 container  mb-16  ">
+// 				<div
+// 					style={{
+// 						boxShadow:
+// 							"0px 10px 15px rgba(0, 0, 0, 0.1) , 0px -10px 15px rgba(0, 0, 0, 0.1)",
+// 					}}
+// 					className="grid grid-cols-12 sm:p-6 p-0 gap-5  rounded-lg ">
+// 					<div
+// 						className=" xl:col-span-5 lg:col-span-6 col-span-12  flex flex-col gap-9 w-full  bg-bgGreen rounded-md py-10 sm:p-3 p-2
+// 					 text-white font-poppins relative ">
+// 						<div className=" absolute bottom-[-30px] right-[-30px] z-10  md:w-[250px]  w-[200px]">
+// 							<img src="./images/circle.png" alt="" className="w-full" />
+// 						</div>
+// 						<div className=" absolute md:bottom-24 bottom-12 md:right-24 right-12 z-10">
+// 							<img src="./images/circle.png" alt="" />
+// 						</div>
+// 						<div className="">
+// 							<h2 className=" text-[27px] ">Contact Information</h2>
+// 							<p className="text-[#dbdbdb]">
+// 								Say something to start a live chat!
+// 							</p>
+// 						</div>
+// 						<div className="flex flex-col gap-5">
+// 							<h2 className="flex  justify-start items-center gap-2 sm:gap-4 ">
+// 								<span>
+// 									<Icon
+// 										icon="carbon:email"
+// 										width="2rem"
+// 										height="2rem"
+// 										style={{ color: "whtie" }}
+// 									/>
+// 								</span>
+// 								<span className="flex-wrap">office@securefastfunding.com</span>
+// 							</h2>
+// 							<h2 className="flex  justify-start items-center gap-2 sm:gap-4  ">
+// 								{" "}
+// 								<span>
+// 									<Icon
+// 										icon="weui:location-filled"
+// 										width="2rem"
+// 										height="2rem"
+// 										style={{ color: "white" }}
+// 									/>
+// 								</span>
+// 								1905 Sherman Street Denver, CO 80203
+// 							</h2>
+// 						</div>
+// 						<div className="flex gap-3">
+// 							<img src="./images/f.png" alt="" />
+// 							<img src="./images/vector.png" alt="" />
+// 							<img src="./images/twitter.png" alt="" />
+// 						</div>
+// 					</div>
+// 					<form
+// 						className="xl:col-span-7 lg:col-span-6 col-span-12  py-16 p-4"
+// 						onSubmit={handleSubmit}>
+// 						<div className="grid xl:grid-cols-2 lg:grid-cols-1 grid-cols-1  xl:gap-20 gap-5 lg:gap-10 relative">
+// 							<div className="flex flex-col">
+// 								<label htmlFor="fullName1" className="font-poppins">
+// 									Full Name 1
+// 								</label>
+// 								<input
+// 									type="text"
+// 									name="fullName1"
+// 									value={formData.fullName1}
+// 									onChange={handleChange}
+// 									className="border-b border-black outline-none"
+// 								/>
+// 								{errors.fullName1 && (
+// 									<p className="font-poppins text-red-600 mt-1">
+// 										{errors.fullName1}
+// 									</p>
+// 								)}
+// 							</div>
+// 							<div className="flex flex-col ">
+// 								<label htmlFor="fullName2" className="font-poppins">
+// 									Full Name 2
+// 								</label>
+// 								<input
+// 									type="text"
+// 									name="fullName2"
+// 									value={formData.fullName2}
+// 									onChange={handleChange}
+// 									className="border-b border-black outline-none"
+// 								/>
+// 								{errors.fullName2 && (
+// 									<p className="font-poppins text-red-600 mt-1">
+// 										{errors.fullName2}
+// 									</p>
+// 								)}
+// 							</div>
+// 						</div>
+// 						<div className="grid xl:grid-cols-2 lg:grid-cols-1 grid-cols-1 xl:gap-20 gap-5 lg:gap-10 my-5">
+// 							<div className="my-5">
+// 								<div className="flex flex-col ">
+// 									<label htmlFor="fullName2" className="font-poppins">
+// 										Phone Number
+// 									</label>
+// 									<input
+// 										type="text"
+// 										name="fullName2 "
+// 										placeholder="+1 234 567 890"
+// 										value={formData.fullName2}
+// 										onChange={handleChange}
+// 										className="border-b border-black outline-none  py-[12px]"
+// 									/>
+// 									{errors.fullName2 && (
+// 										<p className="font-poppins text-red-600 mt-1">
+// 											{errors.fullName2}
+// 										</p>
+// 									)}
+// 								</div>
+// 							</div>
+// 							<div className="my-5">
+// 								<label htmlFor="object" className="font-poppins">
+// 									Select Object
+// 								</label>
+// 								<select
+// 									name="object"
+// 									value={formData.object}
+// 									onChange={handleChange}
+// 									className="py-[12px] px-1 outline-none w-full font-poppins border-b border-black">
+// 									<option value="">Select Object</option>
+// 									<option value="1">Object 1</option>
+// 									<option value="2">Object 2</option>
+// 									<option value="3">Object 3</option>
+// 									<option value="4">Object 4</option>
+// 								</select>
+// 								{errors.object && (
+// 									<p className="font-poppins text-red-600 mt-1">
+// 										{errors.object}
+// 									</p>
+// 								)}
+// 							</div>
+// 						</div>
+// 						<div className="grid grid-cols-1 my-10">
+// 							<div className="flex flex-col">
+// 								<label htmlFor="message" className="font-poppins">
+// 									Full Name
+// 								</label>
+// 								<textarea
+// 									name="message"
+// 									value={formData.message}
+// 									onChange={handleChange}
+// 									className="border-b py-2 border-black outline-none font-poppins"
+// 									placeholder="Enter Your Message"
+// 								/>
+// 								{errors.message && (
+// 									<p className="font-poppins text-red-600 mt-1">
+// 										{errors.message}
+// 									</p>
+// 								)}
+// 							</div>
+// 						</div>
+// 						<div className="flex justify-end mt-5">
+// 							<button
+// 								type="submit"
+// 								className="px-10 rounded-md py-3 bg-bgBlue text-white font-poppins text-[22px]">
+// 								Send Message
+// 							</button>
+// 						</div>
+// 					</form>
+// 				</div>
+// 			</div>
+// 			<Footer />
+// 		</div>
+// 	);
+// }

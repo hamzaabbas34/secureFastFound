@@ -1,24 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../Navbar/Navbar";
 import Footer from "../../home/Footer/Footer";
-
+import { Link } from "react-router-dom";
+import img1 from "../../../assets/images/backServiceLoan.png";
+import img2 from "../../../assets/images/buisness_loan_img_1.png";
+import img3 from "../../../assets/images/buisness_loan_img_2.png";
 export default function BusinessLoans() {
+	useEffect(() => {
+		// Scroll to top when the component loads
+		window.scrollTo(0, 0);
+	}, []);
 	return (
 		<div>
 			<Navbar />
 			<div className="">
-				<div className="mt-[90px] w-full h-[40vh] bg-red-100 flex justify-center items-center text-[48px] text-white">
-					<h2 className="  px-8 font-Inter  text-3xl sm:text-5xl ">
+				<div
+					style={{
+						backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${img1})`,
+					}}
+					className="bg-center bg-cover mt-[90px] w-full h-[40vh] bg-red-100 flex justify-center items-center  text-[48px] text-white">
+					<h2 className="  px-8 font-Inter  text-3xl sm:text-5xl  font-serif">
 						Business Loans
 					</h2>
 				</div>
-				<div className=" grid  gap-5 lg:grid-cols-2 grid-cols-1 px-8  md:px-20 lg:px-28 xl:px-40 2xl:px-48  my-16 ">
+				<div className=" grid  gap-5 lg:grid-cols-2 grid-cols-1 px-3  container  my-16 ">
 					<div className=" w-full h-full">
-						<img
-							src="./images/buisness_loan_img_1.png "
-							alt=""
-							className="h-full  object-cover"
-						/>
+						<img src={img2} alt="" className="h-full  object-cover" />
 					</div>
 					<div className="font-poppins ">
 						<h2 className="text-[28px] font-semibold  text-customBlue">
@@ -37,14 +44,14 @@ export default function BusinessLoans() {
 						</p>
 						<div className=" py-3 xl:py-5">
 							<button className=" px-10 py-3 bg-bgBlue text-white rounded-md">
-								Apply Now
+								<Link to="/Check_Eligibility">Apply Now</Link>
 							</button>
 						</div>
 					</div>
 				</div>
 				<div className="bg-[#ecf8ef] px-3 sm:px-0">
 					<div
-						className=" font-poppins  xl:w-[1320px] lg:w-[1024px] md:w-[720px]  sm:w-[600px] w-full mx-auto   
+						className=" font-poppins  container mx-auto   
 		">
 						<h2 className="text-[28px] text-customBlue font-semibold pt-10 pb-5 ">
 							Benefits
@@ -177,21 +184,17 @@ export default function BusinessLoans() {
 									Industry-Specific Support:{" "}
 								</span>
 								<span className="text-[20px]">
-									Whether youâ€™re in agriculture, healthcare, retail, or
-									another sector, our loans are designed to meet the unique
-									challenges and opportunities of your industry.
+									Whether you're in agriculture, healthcare, retail, or another
+									sector, our loans are designed to meet the unique challenges
+									and opportunities of your industry.
 								</span>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<div
-					className=" font-poppins  xl:w-[1320px] lg:w-[1024px] md:w-[720px]  sm:w-[600px] w-full mx-auto  
-			 px-0 lg:px-8
-				py-10  
-		">
-					<div className=" grid grid-cols-1 xl:grid-cols-2 px-3 sm:px-0">
-						<div className="  ">
+				<div className=" font-poppins container w-full mx-auto  px-3 lg:px-8 py-10 	">
+					<div className=" grid grid-cols-12 px-3 sm:px-0">
+						<div className="col-span-12 lg:col-span-7   ">
 							<h2 className="text-[28px] text-customBlue font-semibold pt-10 pb-5 ">
 								Qualifications:
 							</h2>
@@ -230,9 +233,9 @@ export default function BusinessLoans() {
 								</p>
 							</div>
 						</div>
-						<div className="  mt-10 mx-auto  xl:m-0">
+						<div className="  mt-10 mx-auto  xl:m-0 col-span-12 lg:col-span-5">
 							<img
-								src="./images/lastteamloan.jpg"
+								src={img3}
 								alt=""
 								className=" h-full  w-auto object-cover "
 							/>
@@ -240,8 +243,8 @@ export default function BusinessLoans() {
 					</div>
 				</div>
 				<div className=" flex justify-center items-center mt-4 mb-16">
-					<button className="px-10 py-3 bg-bgBlue text-white font-poppins hover:bg-inherit hover:border-2 border-customBlue hover:text-customBlue rounded-md  text-[20px] ">
-						Apply Now
+					<button className="px-10 py-3 border-2 bg-bgBlue text-white font-poppins hover:bg-inherit hover:border-2 border-customBlue hover:text-customBlue rounded-md  text-[20px] ">
+					<Link to="/Check_Eligibility">Apply Now</Link>
 					</button>
 				</div>
 			</div>

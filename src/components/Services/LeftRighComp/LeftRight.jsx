@@ -6,7 +6,10 @@ export default function LeftRight({
 	btnName,
 	heading2,
 	heading1,
-}) {
+}) 
+
+{
+	
 	return (
 		<>
 			<div className=" w-full h-full">

@@ -1,23 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../Navbar/Navbar";
 import Footer from "../../home/Footer/Footer";
+import img1 from "../../../assets/images/invoice_img_1.png";
+import img3 from "../../../assets/images/backServiceLoan.png";
+
+import img2 from "../../../assets/images/invoice_img_2.png";
+import { Link } from "react-router-dom";
 export default function Invoicefactoringloan() {
+	useEffect(() => {
+		// Scroll to top when the component loads
+		window.scrollTo(0, 0);
+	}, []);
 	return (
 		<div>
 			<Navbar />
 			<div className="">
-				<div className="mt-[90px] w-full h-[40vh] bg-red-100 flex justify-center items-center text-[48px] text-white">
-					<h2 className="  px-8 font-Inter  text-3xl sm:text-5xl ">
+				<div
+					style={{
+						backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${img3})`,
+					}}
+					className="bg-center bg-cover  mt-[90px] w-full h-[40vh] bg-red-100 flex justify-center items-center text-[48px] text-white">
+					<h2 className="  px-8 font-Inter  text-3xl sm:text-5xl  font-serif">
 						Invoice Factoring loan
 					</h2>
 				</div>
-				<div className=" grid  gap-5 lg:grid-cols-2 grid-cols-1 px-8  md:px-20 lg:px-28 xl:px-40 2xl:px-48  my-16 ">
+				<div className=" grid  gap-5 lg:grid-cols-2 grid-cols-1 px-3  container  my-16 ">
 					<div className=" w-full h-full">
-						<img
-							src="./images/sba_IMG_1.webp"
-							alt=""
-							className="h-full  object-cover"
-						/>
+						<img src={img1} alt="" className="h-full  object-cover" />
 					</div>
 					<div className="font-poppins ">
 						<h2 className="text-[28px] font-semibold  text-customBlue">
@@ -47,7 +56,7 @@ export default function Invoicefactoringloan() {
 				</div>
 				<div className="bg-[#ecf8ef] px-3 sm:px-0">
 					<div
-						className=" font-poppins  xl:w-[1320px] lg:w-[1024px] md:w-[720px]  sm:w-[600px] w-full mx-auto   
+						className=" font-poppins  container  mx-auto   
 		">
 						<h2 className="text-[28px] text-customBlue font-semibold pt-10 pb-5 ">
 							Benefits of Invoice Factoring loan:
@@ -135,12 +144,12 @@ export default function Invoicefactoringloan() {
 					</div>
 				</div>
 				<div
-					className=" font-poppins  xl:w-[1320px] lg:w-[1024px] md:w-[720px]  sm:w-[600px] w-full mx-auto  
+					className=" font-poppins   container mx-auto  
 			 px-0 lg:px-8
 				py-10  
 		">
-					<div className=" grid grid-cols-1 xl:grid-cols-2 px-3 sm:px-0">
-						<div className="  ">
+					<div className=" grid grid-cols-12  px-3 sm:px-0">
+						<div className=" col-span-12 lg:col-span-7 ">
 							<h2 className="text-[28px] text-customBlue font-semibold pt-10 pb-5 ">
 								Qualifications
 							</h2>
@@ -171,11 +180,10 @@ export default function Invoicefactoringloan() {
 									Incorporation, bank statements, and customer contracts.
 								</p>
 							</div>
-							
 						</div>
-						<div className="  mt-10 mx-auto  xl:m-0 md:px-4">
+						<div className="  mt-10 mx-auto  xl:m-0 md:px-4 col-span-12 lg:col-span-5">
 							<img
-								src="./images/sba_IMG_2.png"
+								src={img2}
 								alt=""
 								className=" h-full  w-auto object-cover "
 							/>
@@ -183,8 +191,8 @@ export default function Invoicefactoringloan() {
 					</div>
 				</div>
 				<div className=" flex justify-center items-center mt-4 mb-16">
-					<button className="px-10 py-3 bg-bgBlue text-white font-poppins hover:bg-inherit hover:border-2 border-customBlue hover:text-customBlue rounded-md  text-[20px] ">
-						Apply Now
+					<button className="px-10 py-3 bg-bgBlue text-white font-poppins hover:bg-inherit hover:border-[1px] border-customBlue hover:text-customBlue border-[1px]  rounded-md  text-[20px] ">
+						<Link to="/Check_Eligibility">Apply Now</Link>
 					</button>
 				</div>
 			</div>

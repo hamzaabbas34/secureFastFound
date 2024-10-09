@@ -1,114 +1,149 @@
 // import React, { useState } from "react";
 // import { Icon } from "@iconify/react";
-// import { Link } from "react-router-dom"; // Import Link from react-router-dom
+// import { NavLink } from "react-router-dom";
+// import MobileNav from "./MobileNav";
 
 // export default function Navbar() {
-// 	const [dropdownOpen, setDropdownOpen] = useState(false); // For dropdown menu
-// 	const [menuOpen, setMenuOpen] = useState(false); // For mobile menu
+// 	const [dropdownOpen, setDropdownOpen] = useState(false);
+// 	const [menuOpen, setMenuOpen] = useState(false);
+// 	const [hoverOpen, setHoverOpen] = useState(false);
 
 // 	return (
-// 		<nav className="fixed top-0 left-0 w-full bg-[#F8F9FA] z-50 shadow-lg text-white px-8  md:px-20 lg:px-28 xl:px-40 2xl:px-48 py-4">
-// 			<div className="container mx-auto flex justify-between items-center">
+// 		<nav className="fixed top-0 left-0 w-full bg-[#F8F9FA] z-50 text-white py-4">
+// 			<div className=" mx-auto flex justify-between items-center container px-4 sm:px-6 md:px-2  lg:px-2 xl:px-2">
 // 				{/* Left Side: Logo */}
 // 				<div className="text-2xl font-poppins font-bold">
-// 					<Link to="/" className="text-customGreen">
-// 						<img src="./images/logo.png" alt="" className=" max-w-64" />
-// 					</Link>
+// 					<NavLink to="/" className="text-customGreen">
+// 						<img src="./images/logo.png" alt="Logo" className="max-w-[190px]" />
+// 					</NavLink>
 // 				</div>
 
-// 				{/* Right Side: Links */}
-// 				<ul className="hidden lg:flex xl:gap-1 text-black">
-// 					<li className="hover:bg-bgGreen rounded-sm px-3 py-3 hover:text-white font-roboto text-[17px] font-bold">
-// 						<Link to="/" className="">
+// 				{/* Right Side: Links for large screens */}
+// 				<ul className="hidden lg:flex  gap-3 xl:gap-3 text-black my-auto justify-between  items-center">
+// 					<li>
+// 						<NavLink
+// 							to="/"
+// 							className={({ isActive }) =>
+// 								isActive
+// 									? "bg-bgGreen rounded-md text-white px-2 py-3 font-roboto  font-bold text-[19px]"
+// 									: "hover:bg-bgGreen hover:rounded-md hover:text-white px-3 py-3 font-roboto text-[19px] font-bold"
+// 							}>
 // 							Home
-// 						</Link>
+// 						</NavLink>
 // 					</li>
 
-// 					<li className="relative">
+// 					<li
+// 						className="relative"
+// 						onMouseEnter={() => setHoverOpen(true)}
+// 						onMouseLeave={() => setHoverOpen(false)}>
 // 						{/* Dropdown Link */}
-// 						<button
-// 							className="flex gap-2 justify-center items-center focus:outline-none hover:bg-bgGreen rounded-sm px-3 py-3 hover:text-white font-roboto text-[17px] font-bold"
-// 							onClick={() => setDropdownOpen(!dropdownOpen)}>
+// 						<button className="flex gap-2 justify-center items-center focus:outline-none hover:rounded-md hover:bg-bgGreen px-3 py-3 group hover:text-white font-roboto text-[19px] font-bold">
 // 							Loan Services
 // 							<span>
 // 								<Icon
 // 									icon="iconamoon:arrow-down-2-fill"
 // 									width="1.2rem"
 // 									height="1.2rem"
-// 									style={{ color: "black" }}
+// 									className="text-black group-hover:text-white"
 // 								/>
 // 							</span>
 // 						</button>
 
-// 						{/* Dropdown Menu with transition */}
+// 						{/* Dropdown Menu */}
 // 						<ul
-// 							className={`absolute top-full mt-2 bg-white text-black rounded shadow-lg w-72 overflow-hidden transition-[max-height] duration-500 ease-in-out ${
-// 								dropdownOpen ? "max-h-[500px]" : "max-h-0"
+// 							className={`absolute top-full mt-2 bg-white text-[19px] text-black rounded shadow-lg w-80 overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+// 								hoverOpen ? "max-h-[500px]" : "max-h-0"
 // 							}`}>
-// 							<li className="hover:bg-gray-200 hover:text-white">
-// 								<Link to="/teamloan" className="block px-4 py-2">
+// 							{/* Dropdown items */}
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink to="/teamloan" className="block px-4 py-2">
 // 									Team Loan
-// 								</Link>
+// 								</NavLink>
 // 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link to="/EquipmentFinancing" className="block px-4 py-2">
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink to="/EquipmentFinancing" className="block px-4 py-2">
 // 									Equipment Financing
-// 								</Link>
+// 								</NavLink>
 // 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link to="/Sbaloans" className="block px-4 py-2">
-// 									SBA Loans
-// 								</Link>
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink to="/Sbaloans" className="block px-4 py-2">
+// 									SBL Loans
+// 								</NavLink>
 // 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link to="/invoice_factoring_loan" className="block px-4 py-2">
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink
+// 									to="/invoice_factoring_loan"
+// 									className="block px-4 py-2">
 // 									Invoice Factoring
-// 								</Link>
+// 								</NavLink>
 // 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link to="/RevenueBased" className="block px-4 py-2">
-// 									Revenue Based Financing
-// 								</Link>
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink to="/RevenueBased" className="block px-4 py-2">
+// 									Revenue-Driven Financing
+// 								</NavLink>
 // 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink
 // 									to="/Purchase_Order_Financing"
 // 									className="block px-4 py-2">
-// 									Purchase Order Financing
-// 								</Link>
+// 									Purchase Order Finacing
+// 								</NavLink>
 // 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link to="/merchant_cash_advance" className="block px-4 py-2">
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink
+// 									to="/merchant_cash_advance"
+// 									className="block px-4 py-2">
 // 									Merchant Cash Advance
-// 								</Link>
+// 								</NavLink>
 // 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link to="/businessloan" className="block px-4 py-2">
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink to="/businessloan" className="block px-4 py-2">
 // 									Business Loans
-// 								</Link>
+// 								</NavLink>
 // 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link to="/Line_of_credit" className="block px-4 py-2">
-// 									Line of credit
-// 								</Link>
+// 							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+// 								<NavLink to="/Line_of_credit" className="block px-4 py-2">
+// 									Line of Credit
+// 								</NavLink>
 // 							</li>
+// 							{/* Other dropdown items */}
 // 						</ul>
 // 					</li>
 
-// 					<li className="hover:bg-bgGreen rounded-sm px-3 py-3 hover:text-white font-roboto text-[17px] font-bold">
-// 						<Link to="/Check_Eligibility" className="">
+// 					<li>
+// 						<NavLink
+// 							to="/Check_Eligibility"
+// 							className={({ isActive }) =>
+// 								isActive
+// 									? "bg-bgGreen text-white rounded-md  px-3 py-3 font-roboto text-[19px] font-bold"
+// 									: "hover:bg-bgGreen hover:rounded-md  hover:text-white px-3 py-3 font-roboto text-[19px] font-bold"
+// 							}>
 // 							Check Eligibility
-// 						</Link>
+// 						</NavLink>
 // 					</li>
-// 					<li className="hover:bg-bgGreen rounded-sm px-3 py-3 hover:text-white font-roboto text-[17px] font-bold">
-// 						<Link to="/FAQ" className="">
+
+// 					<li>
+// 						<NavLink
+// 							to="/FAQ"
+// 							className={({ isActive }) =>
+// 								isActive
+// 									? "bg-bgGreen  text-white rounded-md px-3 py-3 font-roboto text-[19px] font-bold"
+// 									: "hover:bg-bgGreen hover:rounded-md hover:text-white px-3 py-3 font-roboto text-[19px] font-bold"
+// 							}>
 // 							FAQ
-// 						</Link>
+// 						</NavLink>
 // 					</li>
-// 					<li className="hover:bg-bgGreen rounded-sm px-3 py-3 hover:text-white font-roboto text-[17px] font-bold">
-// 						<Link to="/contact" className="">
+
+// 					<li>
+// 						<NavLink
+// 							to="/contact"
+// 							className={({ isActive }) =>
+// 								isActive
+// 									? "bg-bgGreen text-white rounded-md px-3 py-3 font-roboto text-[19px] font-bold"
+// 									: "hover:bg-bgGreen hover:rounded-md  hover:text-white px-3 py-3 font-roboto text-[19px] font-bold"
+// 							}>
 // 							Contact us
-// 						</Link>
+// 						</NavLink>
 // 					</li>
 // 				</ul>
 
@@ -134,199 +169,178 @@
 // 			</div>
 
 // 			{/* Mobile Menu */}
-// 			{menuOpen && (
-// 				<ul className="  lg:hidden mt-4 space-y-2  text-center rounded-lg text-black">
-// 					<li className="py-5">
-// 						<Link to="/" className="">
-// 							Home
-// 						</Link>
-// 					</li>
-// 					<li className="py-5 mt-0" style={{ margin: "0px" }}>
-// 						<Link to="/about" className="block m-0">
-// 							About
-// 						</Link>
-// 					</li>
-// 					<li
-// 						className="flex flex-col justify-center  pt-4 pb-5"
-// 						style={{ margin: "0px" }}>
-// 						<button
-// 							className="block focus:outline-none"
-// 							onClick={() => setDropdownOpen(!dropdownOpen)}>
-// 							Services
-// 						</button>
-// 						{/* Mobile Dropdown */}
-// 						<ul
-// 							className={`bg-white  rounded-lg overflow-hidden transition-[max-height] duration-500 ease-in-out ${
-// 								dropdownOpen ? "max-h-[500px]" : "max-h-0"
-// 							}`}>
-// 							<li className="  ">
-// 								<Link to="/teamloan" className="block py-3">
-// 									Team Loan
-// 								</Link>
-// 							</li>
-// 							<li className=" ">
-// 								<Link to="/EquipmentFinancing" className="block py-3">
-// 									Equipment Financing
-// 								</Link>
-// 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link to="/Sbaloans" className="block  py-3">
-// 									SBA Loans
-// 								</Link>
-// 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link to="/invoice_factoring_loan" className="block  py-3">
-// 									Invoice Factoring
-// 								</Link>
-// 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link to="/RevenueBased" className="block  py-3">
-// 									Revenue Based Financing
-// 								</Link>
-// 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link to="/Purchase_Order_Financing" className="block  py-3">
-// 									Purchase Order Financing
-// 								</Link>
-// 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link to="/merchant_cash_advance" className="block  py-3">
-// 									Merchant Cash Advance
-// 								</Link>
-// 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link to="/businessloan" className="block  py-3">
-// 									Business Loans
-// 								</Link>
-// 							</li>
-// 							<li className="hover:bg-gray-200">
-// 								<Link to="/Line_of_credit" className="block  py-3">
-// 									Line of credit
-// 								</Link>
-// 							</li>
-// 						</ul>
-// 					</li>
-// 					<li className="pt-4 pb-">
-// 						<Link to="/contact" className="block hover:text-customGreen">
-// 							Contact
-// 						</Link>
-// 					</li>
-// 				</ul>
-// 			)}
+// 			<MobileNav
+// 				menuOpen={menuOpen}
+// 				setDropdownOpen={setDropdownOpen}
+// 				dropdownOpen={dropdownOpen}
+// 			/>
 // 		</nav>
 // 	);
 // }
-
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import MobileNav from "./MobileNav";
+import logo from "../../assets/images/logo.png";
 
 export default function Navbar() {
 	const [dropdownOpen, setDropdownOpen] = useState(false); // For dropdown menu
 	const [menuOpen, setMenuOpen] = useState(false); // For mobile menu
+	const [hoverOpen, setHoverOpen] = useState(false);
 
 	return (
-		<nav className="fixed top-0 left-0 w-full bg-[#F8F9FA] z-50 shadow-lg text-white px-8  md:px-20 lg:px-28 xl:px-40 2xl:px-48 py-4">
-			<div className="container mx-auto flex justify-between items-center">
+		<nav className="fixed top-0 left-0 w-full bg-[#F8F9FA] z-50 text-white py-[21px]">
+			<div className=" mx-auto flex justify-between items-center container px-3 ">
 				{/* Left Side: Logo */}
 				<div className="text-2xl font-poppins font-bold">
-					<Link to="/" className="text-customGreen">
-						<img src="./images/logo.png" alt="" className=" max-w-64" />
-					</Link>
+					<NavLink to="/" className="text-customGreen">
+						<img src={logo} alt="Logo" className="max-w-[190px]" />
+					</NavLink>
 				</div>
 
 				{/* Right Side: Links for large screens */}
-				<ul className="hidden lg:flex xl:gap-1 text-black">
-					<li className="hover:bg-bgGreen rounded-sm px-3 py-3 hover:text-white font-roboto text-[17px] font-bold">
-						<Link to="/" className="">
+				<ul className="hidden lg:flex  gap-3 xl:gap-2 text-black my-auto justify-center  items-center">
+					<li>
+						<NavLink
+							to="/"
+							className={({ isActive }) =>
+								isActive
+									? "bg-bgGreen text-white px-2 py-3 font-roboto  rounded-md font-bold text-[19px]"
+									: "hover:bg-bgGreen hover:rounded-md rounded-none hover:text-white px-2 py-3 font-roboto text-[19px] font-bold"
+							}>
 							Home
-						</Link>
+						</NavLink>
 					</li>
 
-					<li className="relative">
+					<li
+						className="relative"
+						onMouseEnter={() => setHoverOpen(true)}
+						onMouseLeave={() => setHoverOpen(false)}>
 						{/* Dropdown Link */}
-						<button
-							className="flex gap-2 justify-center items-center focus:outline-none hover:bg-bgGreen rounded-sm px-3 py-3 group hover:text-white font-roboto text-[17px] font-bold"
-							onClick={() => setDropdownOpen(!dropdownOpen)}>
+
+						<button className="flex gap-2 justify-center items-center rounded focus:outline-none hover:bg-bgGreen px-2 py-[9px] hover:rounded-md group hover:text-white font-roboto text-[19px] font-bold">
 							Loan Services
 							<span>
 								<Icon
 									icon="iconamoon:arrow-down-2-fill"
 									width="1.2rem"
 									height="1.2rem"
-									className="text-black group-hover:text-white"
+									className={
+										({ isActive }) =>
+											isActive
+												? "text-white" // If active, set icon color to white
+												: "text-black group-hover:text-white" // Default color is black, changes on hover
+									}
 								/>
 							</span>
 						</button>
 
-						{/* Dropdown Menu for large screens */}
+						{/* Dropdown Menu */}
 						<ul
-							className={`absolute top-full mt-2 bg-white text-black rounded shadow-lg w-72 overflow-hidden transition-[max-height] duration-500 ease-in-out ${
-								dropdownOpen ? "max-h-[500px]" : "max-h-0"
+							className={`absolute top-full mt-2 bg-white text-[19px] text-black rounded shadow-lg w-80 overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+								hoverOpen ? "max-h-[500px]" : "max-h-0"
 							}`}>
-							<li className="hover:bg-gray-200">
-								<Link to="/teamloan" className="block px-4 py-2">
+							{/* Dropdown items */}
+							<li className="hover:bg-bgGreen  hover:text-white font-semibold">
+								<NavLink to="/teamloan" className="block px-4 py-2">
 									Team Loan
-								</Link>
+								</NavLink>
 							</li>
-							<li className="hover:bg-gray-200">
-								<Link to="/teamloan" className="block px-4 py-2">
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink to="/EquipmentFinancing" className="block px-4 py-2">
 									Equipment Financing
-								</Link>
+								</NavLink>
 							</li>
-							<li className="hover:bg-gray-200">
-								<Link to="/teamloan" className="block px-4 py-2">
-									SBA Loans
-								</Link>
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink to="/Sbaloans" className="block px-4 py-2">
+									SBL Loans
+								</NavLink>
 							</li>
-							<li className="hover:bg-gray-200">
-								<Link to="/teamloan" className="block px-4 py-2">
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink
+									to="/invoice_factoring_loan"
+									className="block px-4 py-2">
 									Invoice Factoring
-								</Link>
+								</NavLink>
 							</li>
-							<li className="hover:bg-gray-200">
-								<Link to="/teamloan" className="block px-4 py-2">
-									Revenue Based Financing
-								</Link>
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink to="/RevenueBased" className="block px-4 py-2">
+									Revenue-Driven Financing
+								</NavLink>
 							</li>
-							<li className="hover:bg-gray-200">
-								<Link to="/teamloan" className="block px-4 py-2">
-									Purchase Based Financing
-								</Link>
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink
+									to="/Purchase_Order_Financing"
+									className="block px-4 py-2">
+									Purchase Order Finacing
+								</NavLink>
 							</li>
-							<li className="hover:bg-gray-200">
-								<Link to="/teamloan" className="block px-4 py-2">
-									Merchant Cash Advance Finacing
-								</Link>
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink
+									to="/merchant_cash_advance"
+									className="block px-4 py-2">
+									Merchant Cash Advance
+								</NavLink>
 							</li>
-							<li className="hover:bg-gray-200">
-								<Link to="/teamloan" className="block px-4 py-2">
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink to="/businessloan" className="block px-4 py-2">
 									Business Loans
-								</Link>
+								</NavLink>
 							</li>
-							<li className="hover:bg-gray-200">
-								<Link to="/teamloan" className="block px-4 py-2">
+							<li className="hover:bg-bgGreen hover:text-white font-semibold">
+								<NavLink to="/Line_of_credit" className="block px-4 py-2">
 									Line of Credit
-								</Link>
+								</NavLink>
 							</li>
-							{/* Add other links here */}
+							{/* Other dropdown items */}
 						</ul>
 					</li>
 
-					<li className="hover:bg-bgGreen rounded-sm px-3 py-3 hover:text-white font-roboto text-[17px] font-bold">
-						<Link to="/Check_Eligibility" className="">
+					<li>
+						<NavLink
+							to="/Check_Eligibility"
+							className={({ isActive }) =>
+								isActive
+									? "bg-bgGreen text-white px-2 py-3  rounded-md font-roboto text-[19px] font-bold"
+									: "hover:bg-bgGreen hover:rounded-md rounded-none   hover:text-white px-2 py-3 font-roboto text-[19px] font-bold"
+							}>
 							Check Eligibility
-						</Link>
+						</NavLink>
 					</li>
-					<li className="hover:bg-bgGreen rounded-sm px-3 py-3 hover:text-white font-roboto text-[17px] font-bold">
-						<Link to="/FAQ" className="">
+
+					<li>
+						<NavLink
+							to="/FAQ"
+							className={({ isActive }) =>
+								isActive
+									? "bg-bgGreen text-white px-2 py-3 rounded-md font-roboto text-[19px] font-bold"
+									: "hover:bg-bgGreen hover:rounded-md rounded-none hover:text-white px-2 py-3 font-roboto text-[19px] font-bold"
+							}>
 							FAQ
-						</Link>
+						</NavLink>
 					</li>
-					<li className="hover:bg-bgGreen rounded-sm px-3 py-3 hover:text-white font-roboto text-[17px] font-bold">
-						<Link to="/contact" className="">
+
+					<li>
+						<NavLink
+							to="/blog"
+							className={({ isActive }) =>
+								isActive
+									? "bg-bgGreen text-white px-2 py-3 rounded-md font-roboto text-[19px] font-bold"
+									: "hover:bg-bgGreen hover:rounded-md rounded-none hover:text-white px-2 py-3 font-roboto text-[19px] font-bold"
+							}>
+							Blog
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to="/contact"
+							className={({ isActive }) =>
+								isActive
+									? "bg-bgGreen text-white px-2 py-3 rounded-md font-roboto text-[19px] font-bold"
+									: "hover:bg-bgGreen hover:rounded-md rounded-none hover:text-white px-2 py-3 font-roboto text-[19px] font-bold"
+							}>
 							Contact us
-						</Link>
+						</NavLink>
 					</li>
 				</ul>
 
@@ -352,97 +366,11 @@ export default function Navbar() {
 			</div>
 
 			{/* Mobile Menu */}
-			<div
-				className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${
-					menuOpen ? "max-h-[720px]" : "max-h-0"
-				}`}>
-				<ul className="lg:hidden mt-4 space-y-2 text-center rounded-lg text-black">
-					<li className="py-5">
-						<Link to="/" className="">
-							Home
-						</Link>
-					</li>
-					<li className="py-5">
-						<Link to="/about" className="block">
-							About
-						</Link>
-					</li>
-					<li className="pt-4 pb-5 flex justify-center flex-col ">
-						{/* Dropdown Button inside mobile menu */}
-						<button
-							className=" focus:outline-none flex justify-center gap-3 ms-3"
-							onClick={() => setDropdownOpen(!dropdownOpen)}>
-							Services
-							<span>
-								<Icon
-									icon="iconamoon:arrow-down-2-fill"
-									width="1.2rem"
-									height="1.2rem"
-									className="text-black mt-1 "
-								/>
-							</span>
-						</button>
-
-						{/* Dropdown Menu inside mobile menu */}
-						<ul
-							className={` bg-white rounded-lg overflow-hidden transition-[max-height] duration-500 ease-in-out ${
-								dropdownOpen ? "max-h-[500px]" : "max-h-0"
-							}`}>
-							<li className="py-3 m-2">
-								<Link to="/teamloan" className="block">
-									Team Loan
-								</Link>
-							</li>
-							<li className="py-3">
-								<Link to="/teamloan" className="block">
-									Equipment Financing
-								</Link>
-							</li>
-							<li className="py-3">
-								<Link to="/teamloan" className="block">
-									SBA Loans
-								</Link>
-							</li>
-							<li className="py-3">
-								<Link to="/teamloan" className="block">
-									Invoice Factoring
-								</Link>
-							</li>
-							<li className="py-3">
-								<Link to="/teamloan" className="block">
-									Revenue Based Financing
-								</Link>
-							</li>
-							<li className="py-3">
-								<Link to="/teamloan" className="block">
-									Purchase Based Financing
-								</Link>
-							</li>
-							<li className="py-3">
-								<Link to="/teamloan" className="block">
-									Merchant Cash Advance Finacing
-								</Link>
-							</li>
-							<li className="py-3">
-								<Link to="/teamloan" className="block">
-									Business Loans
-								</Link>
-							</li>
-							<li className="py-3">
-								<Link to="/teamloan" className="block">
-									Line of Credit
-								</Link>
-							</li>
-							{/* Add other links here */}
-						</ul>
-					</li>
-					<li className="pt-4 pb-5">
-						<Link to="/contact" className="block hover:text-customGreen">
-							Contact
-						</Link>
-					</li>
-				</ul>
-			</div>
+			<MobileNav
+				menuOpen={menuOpen}
+				setDropdownOpen={setDropdownOpen}
+				dropdownOpen={dropdownOpen}
+			/>
 		</nav>
 	);
 }
